@@ -1,7 +1,7 @@
 ## usersテーブル	
 |Column|Type|Options|	
 |-------|----|-------|	
-name|varchar|null: false, unique: true	
+name|string|null: false, unique: true	
 	
 ### Association	
 -  has_many: groups, through: :members
@@ -12,8 +12,8 @@ name|varchar|null: false, unique: true
 ## membersテーブル	
 |Column|Type|Options|	
 |-------|----|-------|	
-user_id|integer|null: false, references :user, foreign_key: true	
-group_id|integer|null: false, references :group, foreign_key: true	
+user_id|references :user|null: false, foreign_key: true	
+group_id|references :group|null: false, foreign_key: true	
 	
 ### Association	
 - belongs_to: user
@@ -23,7 +23,7 @@ group_id|integer|null: false, references :group, foreign_key: true
 ## groupsテーブル	
 |Column|Type|Options|	
 |-------|----|-------|	
-group_name|varchar|null: false, unique: true	
+group_name|string|null: false, unique: true	
 	
 ### Association	
 -  has_many: users, through: :members
@@ -34,10 +34,10 @@ group_name|varchar|null: false, unique: true
 ## messagesテーブル	
 |Column|Type|Options|	
 |-------|----|-------|	
-group_id|integer|null: false, references :group, foreign_key: true	
-user_id|integer|null: false, references :user, foreign_key: true	
-body|varchar|	
-image|varchar|	
+group_id|references :group|null: false, foreign_key: true	
+user_id|references :user|null: false, foreign_key: true	
+body|string|	
+image|string|	
 	
 ### Association	
 -  belongs_to: user
