@@ -1,7 +1,7 @@
 ## usersテーブル	
 |Column|Type|Options|	
 |-------|----|-------|	
-name|string|null: false, unique: true	
+name|string|null: false, unique: true, add_index
 	
 ### Association	
 -  has_many: groups, through: :members
