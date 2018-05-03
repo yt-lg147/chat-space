@@ -15,4 +15,13 @@
       color: #999999;
     }
   }
+  .edit-btn {
+    float: right;
+    color: $colorSkyblue;
+    margin-top: 28px;
+    padding: 0 20px;
+    height: 40px;
+    line-height: 40px;
+    border: solid 1px $colorSkyblue;
+  }
 }
