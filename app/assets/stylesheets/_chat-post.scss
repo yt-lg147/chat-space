@@ -17,5 +17,11 @@
       color: #999999;
       float: left;
     }
+    &__message {
+      clear: both;
+      padding-top: 10px;
+      font-size: 14px;
+      color: #434A54;
+    }
   }
 }
