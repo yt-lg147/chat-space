@@ -22,3 +22,5 @@
         = link_to "Edit", root_path, class: "btn--skyblue"
     .border
     .chat-post
+      / = @messages.each do |message|
+      = render partial: "chat-post-temp"#-, locals: { message: message }
