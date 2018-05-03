@@ -6,11 +6,9 @@
       .user-info__name
         %p user.name
       .user-info__icon
-        = link_to fa_icon("edit"), root_path
-        = link_to fa_icon("cog"), root_path
+        = link_to fa_icon("edit"), root_path, class: "btn--white"
+        = link_to fa_icon("cog"), root_path, class: "btn--white"
     .group-info
       / = @groups.each do |group|
       = render partial: "group-info-temp"#-, locals: { group: group }
   .chat-screen
-    .chat-group
-      %p group-name
