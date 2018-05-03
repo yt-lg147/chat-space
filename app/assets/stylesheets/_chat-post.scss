@@ -4,4 +4,12 @@
   min-height: calc(100vh - 190px);
   .chat-post-temp {
     padding: 20px 0;
+    &__user-name {
+      font-size: 16px;
+      line-height: 16px;
+      color: #434A54;
+      float: left;
+      padding-right: 10px;
+    }
+  }
 }
