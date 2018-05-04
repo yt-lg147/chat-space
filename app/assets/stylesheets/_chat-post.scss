@@ -7,7 +7,7 @@
     &__user-name {
       font-size: 16px;
       line-height: 16px;
-      color: #434A54;
+      color: $colorGrayishBlue;
       float: left;
       padding-right: 10px;
     }
@@ -21,7 +21,7 @@
       clear: both;
       padding-top: 10px;
       font-size: 14px;
-      color: #434A54;
+      color: $colorGrayishBlue;
     }
   }
 }
