@@ -7,21 +7,21 @@
     padding-top: 35px;
     &__name {
       font-size: 20px;
-      color: $colorvDarkgray;
+      color: $colorvDarkGray;
     }
     &__member {
       padding-top: 15px;
       font-size: 12px;
-      color: $colorDarkgray;
+      color: $colorDarkGray;
     }
   }
   .edit-btn {
     float: right;
-    color: $colorSkyblue;
+    color: $colorSkyBlue;
     margin-top: 28px;
     padding: 0 20px;
     height: 40px;
     line-height: 40px;
-    border: solid 1px $colorSkyblue;
+    border: solid 1px $colorSkyBlue;
   }
 }
