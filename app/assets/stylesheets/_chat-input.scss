@@ -25,4 +25,13 @@
       }
     }
   }
+  .send-btn {
+    float: left;
+    margin-left: 15px;
+    width: calc(10% - 15px);
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background-color: $colorSkyblue;
+  }
 }
