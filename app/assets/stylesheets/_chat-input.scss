@@ -14,5 +14,15 @@
       width: 95%;
       height: 50px;
     }
+    .label-box {
+      position: absolute;
+      height: 50px;
+      line-height: 50px;
+      top: 0;
+      right: 10px;
+      &__file {
+        display: none;
+      }
+    }
   }
 }
