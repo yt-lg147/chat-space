@@ -1,4 +1,16 @@
 .group-info {
   background-color: $colorDarkBlue;
   min-height: calc(100vh - 130px);
+  .group-info-temp {
+    padding: 20px;
+    &__name {
+      font-size: 15px;
+      color: $colorWhite;
+    }
+    &__last-message {
+      padding-top: 5px;
+      font-size: 11px;
+      color: $colorWhite;
+    }
+  }
 }
