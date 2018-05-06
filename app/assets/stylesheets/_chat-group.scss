@@ -3,9 +3,11 @@
   height: 100px;
   padding: 0 40px;
   background-color: $colorWhite;
+  overflow: hidden;
   .selected-group {
     float: left;
     padding-top: 35px;
+    width: 90%;
     &__name {
       font-size: 20px;
       color: $colorvDarkGray;

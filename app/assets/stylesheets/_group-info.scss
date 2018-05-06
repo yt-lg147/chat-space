@@ -1,6 +1,8 @@
 .group-info {
+  clear: both;
   background-color: $colorDarkBlue;
-  min-height: calc(100vh - 130px);
+  height: calc(100vh - 130px);
+  overflow: scroll;
   .group-info-temp {
     padding: 20px;
     &__name {

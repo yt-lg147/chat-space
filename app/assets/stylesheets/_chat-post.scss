@@ -1,7 +1,8 @@
 .chat-post {
   background-color: $colorGray;
   padding: 6px 40px 0 40px;
-  min-height: calc(100vh - 227px);
+  height: calc(100vh - 227px);
+  overflow: scroll;
   .chat-post-temp {
     @include clearfix();
     padding: 20px 0;
