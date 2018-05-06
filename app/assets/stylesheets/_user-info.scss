@@ -1,4 +1,5 @@
 .user-info {
+  @include clearfix();
   background-color: $colorvDarkBlue;
   height: 20px;
   padding: 40px 20px;

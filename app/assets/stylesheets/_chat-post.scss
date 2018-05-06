@@ -3,6 +3,7 @@
   padding: 6px 40px 0 40px;
   min-height: calc(100vh - 227px);
   .chat-post-temp {
+    @include clearfix();
     padding: 20px 0;
     &__user-name {
       font-size: 16px;

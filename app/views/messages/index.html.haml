@@ -1,8 +1,8 @@
 .message-bar
   %p チャットグループが作成されました。
-.contents
+.contents.clearfix
   .side-bar
-    .user-info
+    .user-info.clearfix
       .user-info__name
         %p user.name
       .user-info__icon
@@ -12,7 +12,7 @@
       / = @groups.each do |group|
       = render partial: "group-info-temp"#-, locals: { group: group }
   .chat-screen
-    .chat-group
+    .chat-group.clearfix
       .selected-group
         .selected-group__name
           %p group.name
@@ -21,7 +21,7 @@
       .edit-btn
         = link_to "Edit", root_path, class: "btn--skyblue"
     .border
-    .chat-post
+    .chat-post.clearfix
       / = @messages.each do |message|
       = render partial: "chat-post-temp"#-, locals: { message: message }
     .chat-input

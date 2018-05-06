@@ -1,4 +1,5 @@
 .chat-group {
+  @include clearfix();
   height: 100px;
   padding: 0 40px;
   background-color: $colorWhite;
