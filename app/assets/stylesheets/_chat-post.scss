@@ -3,7 +3,7 @@
   padding: 6px 40px 0 40px;
   height: calc(100vh - 227px);
   overflow: scroll;
-  .chat-post-temp {
+  .temp-post {
     @include clearfix();
     padding: 20px 0;
     &__user-name {

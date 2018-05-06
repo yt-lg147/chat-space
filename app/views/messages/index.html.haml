@@ -10,7 +10,7 @@
         = link_to fa_icon("cog"), root_path, class: "btn--white"
     .group-info
       / = @groups.each do |group|
-      = render partial: "group-info-temp"#-, locals: { group: group }
+      = render partial: "temp-group"#-, locals: { group: group }
   .chat-screen
     .chat-group.clearfix
       .selected-group
@@ -23,7 +23,7 @@
     .border
     .chat-post.clearfix
       / = @messages.each do |message|
-      = render partial: "chat-post-temp"#-, locals: { message: message }
+      = render partial: "temp-post"#-, locals: { message: message }
     .chat-input
       %form
         .box
