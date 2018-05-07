@@ -1,13 +1,11 @@
-.message-bar
-  %p チャットグループが作成されました。
 .contents.clearfix
   .side-bar
     .user-info.clearfix
       .user-info__name
-        %p user.name
+        = current_user.name
       .user-info__icon
         = link_to fa_icon("edit"), root_path, class: "btn--white"
-        = link_to fa_icon("cog"), root_path, class: "btn--white"
+        = link_to fa_icon("cog"), edit_user_path(current_user), class: "btn--white"
     .group-info
       / = @groups.each do |group|
       = render partial: "temp-group"#-, locals: { group: group }
