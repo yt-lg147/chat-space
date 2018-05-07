@@ -1,8 +1,17 @@
-.message-bar {
+.notice {
   height: 30px;
   line-height: 30px;
   width: 100vw;
-  background-color: $colorSkyBlue;
   text-align: center;
   color: $colorWhite;
+  background-color: $colorSkyBlue;
+}
+
+.alert {
+  height: 30px;
+  line-height: 30px;
+  width: 100vw;
+  text-align: center;
+  color: $colorWhite;
+  background-color: $colorOrange;
 }
