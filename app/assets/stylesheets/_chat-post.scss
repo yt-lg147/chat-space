@@ -1,0 +1,29 @@
+.chat-post {
+  background-color: $colorGray;
+  padding: 6px 40px 0 40px;
+  height: calc(100vh - 227px);
+  overflow: scroll;
+  .temp-post {
+    @include clearfix();
+    padding: 20px 0;
+    &__user-name {
+      font-size: 16px;
+      line-height: 16px;
+      color: $colorGrayishBlue;
+      float: left;
+      padding-right: 10px;
+    }
+    &__date {
+      font-size: 12px;
+      line-height: 12px;
+      color: $colorDarkGray;
+      float: left;
+    }
+    &__message {
+      clear: both;
+      padding-top: 10px;
+      font-size: 14px;
+      color: $colorGrayishBlue;
+    }
+  }
+}

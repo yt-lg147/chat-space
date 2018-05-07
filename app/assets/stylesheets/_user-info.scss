@@ -1,0 +1,15 @@
+.user-info {
+  @include clearfix();
+  background-color: $colorvDarkBlue;
+  height: 20px;
+  padding: 40px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: $colorWhite;
+  &__name {
+    float: left;
+  }
+  &__icon {
+    float: right;
+  }
+}
