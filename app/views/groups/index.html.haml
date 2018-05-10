@@ -4,11 +4,16 @@
       .user-info__name
         = current_user.name
       .user-info__icon
-        = link_to fa_icon("edit"), root_path, class: "btn--white"
+        = link_to fa_icon("edit"), new_group_path, class: "btn--white"
         = link_to fa_icon("cog"), edit_user_path(current_user), class: "btn--white"
     .group-info
-      / = @groups.each do |group|
-      = render partial: "temp-group"#-, locals: { group: group }
+      - if current_user.groups.count >= 1
+        - current_user.groups.each do |group|
+          = render partial: "temp-group", locals: { group: group }
+      - else
+        .temp-group
+          .temp-group__name
+            グループに所属していません。
   .chat-screen
     .chat-group.clearfix
       .selected-group
@@ -17,11 +22,11 @@
         .selected-group__member
           %p group.user.name
       .edit-btn
-        = link_to "Edit", root_path, class: "btn--skyblue"
+        = link_to "Edit", edit_group_path(1), class: "btn--skyblue"
     .border
     .chat-post.clearfix
       / = @messages.each do |message|
-      = render partial: "temp-post"#-, locals: { message: message }
+      = render partial: "messages/temp-post"#-, locals: { message: message }
     .chat-input
       %form
         .box
