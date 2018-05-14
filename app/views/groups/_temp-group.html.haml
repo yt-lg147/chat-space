@@ -1,5 +1,8 @@
 .temp-group
   .temp-group__name
-    = group.group_name
+    = link_to group.group_name, group_messages_path(group.id), class: "temp-group__name"
   .temp-group__last-message
-    %p last message
+    - if group.messages.empty?
+      まだメッセージはありません
+    - else
+      = group.messages.last.body
