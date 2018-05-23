@@ -1,0 +1,29 @@
+.contents.clearfix
+  = render template: "groups/index.html.haml"
+
+  .chat-screen
+    .chat-group.clearfix
+      .selected-group
+        .selected-group__name
+          = @group.group_name
+        .selected-group__member
+          %p
+            Member:
+            - @group.users.each do |user|
+              = user.name
+      .edit-btn
+        = link_to "Edit", edit_group_path(@group), class: "btn--skyblue"
+    .border
+    .chat-post.clearfix
+      - @messages.each do |message|
+        = render partial: "temp-post", locals: { message: message }
+    .chat-input
+      = form_for [@group, @message] do |f|
+        .box
+          = f.text_field :body, placeholder: "type a message ", class: "box__text"
+          .label-box
+            = f.label :image, fa_icon("image")
+            = f.file_field :image, class: "label-box__file"
+        .send-btn
+          = f.submit "Send", class: "btn-form btn--white"
+
