@@ -11,7 +11,7 @@ class MessagesController < ApplicationController
     respond_to do |format|
       if @message.save
         format.html { redirect_to group_messages_path(@group), notice: "メッセージが送信されました。" }
-        format.json { render json: @message }
+        format.json
       else
         format.html { redirect_to group_messages_path(params[:group_id]), alert: "メッセージを入力してください" }
       end
