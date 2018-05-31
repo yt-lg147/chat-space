@@ -58,8 +58,7 @@ $(function() {
       } else {
         appendImage(data);
       }
-      $('.box__text').val('');
-      $('.label-box__file').val('');
+      $('form')[0].reset();
       alert("投稿しました。");
       $('.chat-post').animate({scrollTop: $('.chat-post')[0].scrollHeight});
     })
