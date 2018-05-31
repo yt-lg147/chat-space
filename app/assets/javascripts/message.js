@@ -38,7 +38,7 @@ $(function() {
     message_list.append(html);
   }
 
-  $(".new_message").on("submit", function(event) {
+  $("#new_message").on("submit", function(event) {
     event.preventDefault();
     var $this = $(this);
     var url = $(this).attr('action');
