@@ -5,6 +5,7 @@ $(function() {
     var $this = $(this);
     var url = $(this).attr('action');
     var formData = new FormData($this.get(0));
+    $('.btn-form').removeAttr('data-disable-with');
     $.ajax({
       url: url,
       type: "POST",
