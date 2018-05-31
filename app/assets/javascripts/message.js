@@ -1,5 +1,24 @@
 $(function() {
 
+  var message_list = $('.chat-post');
+
+  function appendMessage(message) {
+    var html = `<div class="temp-post clearfix">
+                  <div class="temp-post__user-name">
+                    ${ message.user_name }
+                  </div>
+                  <div class="temp-post__date">
+                    ${ message.date }
+                  </div>
+                  <div class="temp-post__message">
+                    ${ message.body }
+                  </div>
+                  <div class="temp-post__image"></div>
+                </div>
+                `
+    message_list.append(html);
+  }
+
   $(".new_message").on("submit", function(event) {
     event.preventDefault();
     var $this = $(this);
@@ -15,6 +34,7 @@ $(function() {
       contentType: false
     })
     .done(function(data) {
+      appendMessage(data);
       console.log("イベント発火確認");
       $('.box__text').val('');
       $('.label-box__file').val('');
