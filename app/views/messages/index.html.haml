@@ -18,7 +18,7 @@
       - @messages.each do |message|
         = render partial: "temp-post", locals: { message: message }
     .chat-input
-      = form_for [@group, @message] do |f|
+      = form_for [@group, @message], html: { class: "new_message"} do |f|
         .box
           = f.text_field :body, placeholder: "type a message ", class: "box__text"
           .label-box
