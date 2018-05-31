@@ -13,7 +13,7 @@ class MessagesController < ApplicationController
         format.html { redirect_to group_messages_path(@group), notice: "メッセージが送信されました。" }
         format.json
       else
-        format.html { redirect_to group_messages_path(params[:group_id]), alert: "メッセージを入力してください" }
+        format.html { redirect_to group_messages_path(@group), alert: "メッセージを入力してください" }
       end
     end
   end
