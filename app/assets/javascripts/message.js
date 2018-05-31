@@ -19,6 +19,25 @@ $(function() {
     message_list.append(html);
   }
 
+  function appendImage(message) {
+    var html = `<div class="temp-post clearfix">
+                  <div class="temp-post__user-name">
+                    ${ message.user_name }
+                  </div>
+                  <div class="temp-post__date">
+                    ${ message.date }
+                  </div>
+                  <div class="temp-post__message">
+                    ${ message.body }
+                  </div>
+                  <div class="temp-post__image">
+                    <img src=${ message.image.url }></img>
+                  </div>
+                </div>
+                `
+    message_list.append(html);
+  }
+
   $(".new_message").on("submit", function(event) {
     event.preventDefault();
     var $this = $(this);
@@ -34,7 +53,11 @@ $(function() {
       contentType: false
     })
     .done(function(data) {
-      appendMessage(data);
+      if(data.image.url == null){
+        appendMessage(data);
+      } else {
+        appendImage(data);
+      }
       console.log("イベント発火確認");
       $('.box__text').val('');
       $('.label-box__file').val('');
