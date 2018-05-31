@@ -60,6 +60,7 @@ $(function() {
       }
       $('.box__text').val('');
       $('.label-box__file').val('');
+      alert("投稿しました。");
       $('.chat-post').animate({scrollTop: $('.chat-post')[0].scrollHeight});
     })
     .fail(function() {
