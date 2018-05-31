@@ -67,6 +67,7 @@ $(function() {
       console.log("XMLHttpRequest : " + jqXHR.status);
       console.log("textStatus     : " + textStatus);
       console.log("errorThrown    : " + errorThrown.message);
+      alert("投稿に失敗しました。");
     })
   });
 });
