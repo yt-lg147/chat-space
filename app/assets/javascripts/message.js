@@ -58,15 +58,11 @@ $(function() {
       } else {
         appendImage(data);
       }
-      console.log("イベント発火確認");
       $('.box__text').val('');
       $('.label-box__file').val('');
       $('.chat-post').animate({scrollTop: $('.chat-post')[0].scrollHeight});
     })
-    .fail(function(jqXHR, textStatus, errorThrown) {
-      console.log("XMLHttpRequest : " + jqXHR.status);
-      console.log("textStatus     : " + textStatus);
-      console.log("errorThrown    : " + errorThrown.message);
+    .fail(function() {
       alert("投稿に失敗しました。");
     })
   });
