@@ -15,6 +15,8 @@ $(function() {
     })
     .done(function(data) {
       console.log("イベント発火確認");
+      $('.box__text').val('');
+      $('.label-box__file').val('');
     })
     .fail(function(jqXHR, textStatus, errorThrown) {
       console.log("XMLHttpRequest : " + jqXHR.status);
