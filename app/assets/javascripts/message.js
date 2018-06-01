@@ -39,7 +39,6 @@ $(function() {
     .done(function(data) {
       appendMessage(data);
       $('#new_message')[0].reset();
-      alert("投稿しました。");
       $('.chat-post').animate({scrollTop: $('.chat-post')[0].scrollHeight});
     })
     .fail(function() {
