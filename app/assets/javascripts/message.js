@@ -3,23 +3,7 @@ $(function() {
   var message_list = $('.chat-post');
 
   function appendMessage(message) {
-    var html = `<div class="temp-post clearfix">
-                  <div class="temp-post__user-name">
-                    ${ message.user_name }
-                  </div>
-                  <div class="temp-post__date">
-                    ${ message.date }
-                  </div>
-                  <div class="temp-post__message">
-                    ${ message.body }
-                  </div>
-                  <div class="temp-post__image"></div>
-                </div>
-                `
-    message_list.append(html);
-  }
 
-  function appendImage(message) {
     var html = `<div class="temp-post clearfix">
                   <div class="temp-post__user-name">
                     ${ message.user_name }
