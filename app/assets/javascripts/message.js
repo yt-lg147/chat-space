@@ -3,6 +3,11 @@ $(function() {
   var message_list = $('.chat-post');
 
   function appendMessage(message) {
+    if (message.image.url == null) {
+      var img_src = "";
+    } else {
+      var img_src = message.image.url;
+    }
 
     var html = `<div class="temp-post clearfix">
                   <div class="temp-post__user-name">
@@ -15,7 +20,7 @@ $(function() {
                     ${ message.body }
                   </div>
                   <div class="temp-post__image">
-                    <img src=${ message.image.url }></img>
+                    <img src=${ img_src }></img>
                   </div>
                 </div>
                 `
