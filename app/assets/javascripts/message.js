@@ -39,7 +39,7 @@ $(function() {
     })
     .done(function(data) {
       appendMessage(data);
-      $('form')[0].reset();
+      $('#new_message')[0].reset();
       alert("投稿しました。");
       $('.chat-post').animate({scrollTop: $('.chat-post')[0].scrollHeight});
     })
