@@ -37,11 +37,7 @@ $(function() {
       contentType: false
     })
     .done(function(data) {
-      if(data.image.url == null){
-        appendMessage(data);
-      } else {
-        appendImage(data);
-      }
+      appendMessage(data);
       $('form')[0].reset();
       alert("投稿しました。");
       $('.chat-post').animate({scrollTop: $('.chat-post')[0].scrollHeight});
