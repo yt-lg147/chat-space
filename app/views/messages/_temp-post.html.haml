@@ -2,8 +2,7 @@
   .temp-post__user-name
     = message.user.name
   .temp-post__date
-    / japan_timeはモデルのメソッド
-    = message.japan_time(message.created_at)
+    = (message.created_at + 9.hours).to_s(:datetime)
   .temp-post__message
     = message.body
   .temp-post__image
