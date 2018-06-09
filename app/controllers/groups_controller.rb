@@ -7,6 +7,7 @@ before_action :set_group, only: [:edit, :update]
   def new
     @group = Group.new
     @group.users << current_user
+    @users = User.where('name LIKE(?)', "%#{params[:keyword]}%")
   end
 
   def create
@@ -19,6 +20,7 @@ before_action :set_group, only: [:edit, :update]
   end
 
   def edit
+    @users = User.where('name LIKE(?)', "%#{params[:keyword]}%")
   end
 
   def update
