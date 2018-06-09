@@ -50,6 +50,7 @@ $(function() {
 
   $(document).on("click", ".user-search-add", function(){
     appendUser(this);
+    $(this).parent().hide();
   });
 
 });
