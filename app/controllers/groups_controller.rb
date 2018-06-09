@@ -8,6 +8,10 @@ before_action :set_group, only: [:edit, :update]
     @group = Group.new
     @group.users << current_user
     @users = User.where('name LIKE(?)', "%#{params[:keyword]}%")
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   def create
@@ -21,6 +25,10 @@ before_action :set_group, only: [:edit, :update]
 
   def edit
     @users = User.where('name LIKE(?)', "%#{params[:keyword]}%")
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   def update
