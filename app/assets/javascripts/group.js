@@ -53,4 +53,8 @@ $(function() {
     $(this).parent().hide();
   });
 
+  $(document).on("click", ".js-remove-btn", function(){
+    $(this).parent().remove();
+  });
+
 });
