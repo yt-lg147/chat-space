@@ -5,7 +5,7 @@ $(function() {
   function appendMessage(message) {
     var img_src = ( message.image == null ) ? "" : message.image;
 
-    var html = `<div class="temp-post clearfix" id="message-id-${ message.id }">
+    var html = `<div class="temp-post clearfix" data-message-id=${ message.id }>
                   <div class="temp-post__user-name">
                     ${ message.user_name }
                   </div>
