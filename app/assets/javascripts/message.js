@@ -47,5 +47,15 @@ $(function() {
   });
 
   setInterval(function() {
+    $.ajax({
+      url: location.href,
+      dataType: "json"
+    })
+    .done(function(data) {
+
+    })
+    .fail(function(data) {
+
+    })
   }, 5000);
 });
