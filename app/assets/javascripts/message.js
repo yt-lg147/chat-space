@@ -52,6 +52,9 @@ $(function() {
       dataType: "json"
     })
     .done(function(messages) {
+      messages.forEach(function(message){
+
+      });
 
     })
     .fail(function(messages) {
