@@ -5,7 +5,7 @@ $(function() {
   function appendMessage(message) {
     var img_src = ( message.image == null ) ? "" : message.image;
 
-    var html = `<div class="temp-post clearfix">
+    var html = `<div class="temp-post clearfix" id="message-id-${ message.id }">
                   <div class="temp-post__user-name">
                     ${ message.user_name }
                   </div>
@@ -51,10 +51,10 @@ $(function() {
       url: location.href,
       dataType: "json"
     })
-    .done(function(data) {
+    .done(function(messages) {
 
     })
-    .fail(function(data) {
+    .fail(function(messages) {
 
     })
   }, 5000);
