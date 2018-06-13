@@ -45,4 +45,7 @@ $(function() {
       alert("投稿に失敗しました。");
     })
   });
+
+  setInterval(function() {
+  }, 5000);
 });
