@@ -56,6 +56,7 @@ $(function() {
         var last_message_id = $('.temp-post').last().data('messageId');
         if ( message.id > last_message_id ) {
           appendMessage(message);
+          $('.chat-post').animate({scrollTop: $('.chat-post')[0].scrollHeight});
         }
       });
 
