@@ -52,8 +52,11 @@ $(function() {
       dataType: "json"
     })
     .done(function(messages) {
-      messages.forEach(function(message){
-
+      messages.forEach(function(message) {
+        var last_message_id = $('.temp-post').last().data('messageId');
+        if ( message.id > last_message_id ) {
+          appendMessage(message);
+        }
       });
 
     })
