@@ -61,8 +61,8 @@ $(function() {
       });
 
     })
-    .fail(function(messages) {
-
+    .fail(function() {
+      alert("自動更新に失敗しました。");
     })
   }, 5000);
 });
