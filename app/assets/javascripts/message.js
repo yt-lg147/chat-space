@@ -23,6 +23,10 @@ $(function() {
     message_list.append(html);
   }
 
+  function scrollBottom() {
+    $('.chat-post').animate({scrollTop: $('.chat-post')[0].scrollHeight});
+  }
+
   $("#new_message").on("submit", function(event) {
     event.preventDefault();
     var url = $(this).attr('action');
@@ -39,7 +43,7 @@ $(function() {
     .done(function(data) {
       appendMessage(data);
       $('#new_message')[0].reset();
-      $('.chat-post').animate({scrollTop: $('.chat-post')[0].scrollHeight});
+      scrollBottom();
     })
     .fail(function() {
       alert("投稿に失敗しました。");
@@ -57,7 +61,7 @@ $(function() {
           var last_message_id = $('.temp-post').last().data('messageId');
           if ( message.id > last_message_id ) {
             appendMessage(message);
-            $('.chat-post').animate({scrollTop: $('.chat-post')[0].scrollHeight});
+            scrollBottom();
           }
         });
       })
