@@ -47,9 +47,9 @@ $(function() {
   });
 
   var interval = setInterval(function() {
-    if (window.location.href.match(/\/groups\/\d+\/messages/)) {
+    if (location.pathname.match(/\/groups\/\d+\/messages/)) {
       $.ajax({
-        url: location.href,
+        url: location.pathname,
         dataType: "json"
       })
       .done(function(messages) {
