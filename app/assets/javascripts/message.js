@@ -52,14 +52,14 @@ $(function() {
 
   var interval = setInterval(function() {
     if (location.pathname.match(/\/groups\/\d+\/messages/)) {
+      var lastMessageId = $('.temp-post').last().data('messageId');
       $.ajax({
         url: location.pathname,
         dataType: "json"
       })
       .done(function(messages) {
         messages.forEach(function(message) {
-          var last_message_id = $('.temp-post').last().data('messageId');
-          if ( message.id > last_message_id ) {
+          if ( message.id > lastMessageId ) {
             appendMessage(message);
             scrollBottom();
           }
