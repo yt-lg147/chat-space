@@ -55,14 +55,13 @@ $(function() {
       var lastMessageId = $('.temp-post').last().data('messageId');
       $.ajax({
         url: location.pathname,
-        dataType: "json"
+        dataType: "json",
+        data: { last_message_id: lastMessageId }
       })
       .done(function(messages) {
         messages.forEach(function(message) {
-          if ( message.id > lastMessageId ) {
-            appendMessage(message);
-            scrollBottom();
-          }
+          appendMessage(message);
+          scrollBottom();
         });
       })
       .fail(function() {
