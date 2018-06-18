@@ -2,7 +2,7 @@
   .temp-post__user-name
     = message.user.name
   .temp-post__date
-    = (message.created_at + 9.hours).to_s(:datetime)
+    = (message.created_at).to_s(:datetime)
   .temp-post__message
     = message.body
   .temp-post__image
