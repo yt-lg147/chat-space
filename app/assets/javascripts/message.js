@@ -61,7 +61,6 @@ $(function() {
       .done(function(messages) {
         messages.forEach(function(message) {
           appendMessage(message);
-          scrollBottom();
         });
       })
       .fail(function() {
