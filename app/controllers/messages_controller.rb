@@ -4,13 +4,7 @@ class MessagesController < ApplicationController
 
   def index
     @message = Message.new
-    @append_messages = []
-    last_message_id = params[:last_message_id].to_i
-    @messages.each do |message|
-      if message.id > last_message_id
-        @append_messages << message
-      end
-    end
+    @append_messages = @messages.where("id > #{params[:last_message_id]}")
     respond_to do |format|
       format.html
       format.json
