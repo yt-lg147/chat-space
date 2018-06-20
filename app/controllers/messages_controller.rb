@@ -4,6 +4,11 @@ class MessagesController < ApplicationController
 
   def index
     @message = Message.new
+    @append_messages = @messages.where("id > #{params[:last_message_id]}")
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   def create

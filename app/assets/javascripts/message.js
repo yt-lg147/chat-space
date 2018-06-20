@@ -5,7 +5,7 @@ $(function() {
   function appendMessage(message) {
     var img_src = ( message.image == null ) ? "" : message.image;
 
-    var html = `<div class="temp-post clearfix">
+    var html = `<div class="temp-post clearfix" data-message-id=${ message.id }>
                   <div class="temp-post__user-name">
                     ${ message.user_name }
                   </div>
@@ -21,6 +21,10 @@ $(function() {
                 </div>
                 `
     message_list.append(html);
+  }
+
+  function scrollBottom() {
+    $('.chat-post').animate({scrollTop: $('.chat-post')[0].scrollHeight});
   }
 
   $("#new_message").on("submit", function(event) {
@@ -39,10 +43,31 @@ $(function() {
     .done(function(data) {
       appendMessage(data);
       $('#new_message')[0].reset();
-      $('.chat-post').animate({scrollTop: $('.chat-post')[0].scrollHeight});
+      scrollBottom();
     })
     .fail(function() {
       alert("投稿に失敗しました。");
     })
   });
+
+  var interval = setInterval(function() {
+    if (location.pathname.match(/\/groups\/\d+\/messages/)) {
+      var lastMessageId = $('.temp-post').last().data('messageId');
+      $.ajax({
+        url: location.pathname,
+        dataType: "json",
+        data: { last_message_id: lastMessageId }
+      })
+      .done(function(messages) {
+        messages.forEach(function(message) {
+          appendMessage(message);
+        });
+      })
+      .fail(function() {
+        alert("自動更新に失敗しました。");
+      })
+    } else {
+      clearInterval(interval);
+    }
+  }, 5000);
 });
