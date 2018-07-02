@@ -19,3 +19,4 @@
 /Gemfile
 /Gemfile.lock
 /public/*
+/config/secrets.yml
